@@ -1,15 +1,15 @@
-var btn = document.querySelector('#btnCreateTable');
+var btn = document.getElementById('btnCreateTable');
 function GetRandomInt(min, max)
 {
-  min = Math.ceil(min);
-  max = Math.floor(max);
+  min = Math.ceil(min); // Округление вверх
+  max = Math.floor(max); // Округление вниз
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 function CreateTable()
 {
   var table = "";
-  var min = document.querySelector("#InputMin").value;
-  var max = document.querySelector("#InputMax").value;
+  var min = document.getElementById("InputMin").value;
+  var max = document.getElementById("InputMax").value;
   if(parseInt(min) && parseInt(max))
   {
     table+='<table width="60%" border="0" style="margin: auto;">';
@@ -36,7 +36,7 @@ function CreateTable()
       table+="<\/tr>";
     }
     table+="<\/table> ";
-    document.querySelector("#Table").innerHTML = table;
+    document.getElementById("Table").innerHTML = table;
   }
   else
   {
